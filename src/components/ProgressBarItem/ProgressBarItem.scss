@@ -1,0 +1,77 @@
+.ProgressBarItem {
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    height: 50px;
+    background: #fafafa;
+    border: 1px #eee solid;
+    border-radius: 5px;
+    vertical-align: middle;
+    overflow: hidden;
+    box-shadow: none;
+    transition: box-shadow .3s ease-out;
+
+    &_selected {
+      box-shadow: 0px 0px 15px 0px rgba(102,182,252,0.6);
+    }
+  }
+
+  &__container_selected &__bar::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 5px;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-size: 20px 20px;
+    animation: progress-bar-stripes 2s linear infinite;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: progress-bar-stripes;
+    content: '';
+  } 
+
+  &__bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%);
+    border-radius: 5px;
+    transition: width .3s ease-out;   
+  }
+
+  &__value {
+    position: relative;
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  &_overloaded &__bar  {
+    background: linear-gradient(to bottom, rgba(254,187,187,1) 0%,rgba(255,92,92,1) 100%);
+  }
+
+  &_overloaded &__container_selected {
+    box-shadow: 0px 0px 15px 0px rgba(255,92,92, 0.6);
+  }
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 20px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+

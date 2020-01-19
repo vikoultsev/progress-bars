@@ -1,0 +1,66 @@
+.App {
+  display: block;
+  margin: 0 auto;
+  padding: 30px 20px 60px 20px;
+  max-width: 800px;
+  border: 1px #eee solid;
+  font-family: sans-serif;
+  box-shadow: 0px 0px 10px 0px rgba(143,141,143,0.4);
+
+  &__headline {
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 2;
+    color: #4a4a4a;
+  }
+
+  &__limit {
+    font-size: 12px;
+    text-align: right;
+    color: #4a4a4a;
+  }
+
+  &__bars {
+    padding-top: 25px;
+    width: 100%;
+  }
+
+  &__barItem {
+    padding: 10px 0;
+    box-shadow: none;
+  }
+
+  &__tools {
+    padding-top: 65px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (max-width: 779px) {
+      display: block;
+      padding-top: 35px;
+    }
+  }
+
+  &__select {
+    padding-right: 150px;
+
+    @media (max-width: 779px) {
+      padding-right: 0;
+      padding-bottom: 15px;
+    }
+  }
+
+  &__buttons {
+    margin-left: -3px;
+    margin-right: -3px;
+    display: flex;
+    flex-grow: 1;
+  }
+
+  &__buttonItem {
+    padding: 0 3px;
+  }
+}
+
